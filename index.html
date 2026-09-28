@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#102c34">
+
+    <link rel="manifest"
+          href="manifest.json">
+
+    <title>Cichlid Poster Maker</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+<header class="top-header">
+
+    <div>
+        <h1>🐟 Cichlid Poster Maker</h1>
+        <p>Tạo poster thông tin cá Cichlid</p>
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <!-- ========================= -->
+    <!-- FORM NHẬP THÔNG TIN -->
+    <!-- ========================= -->
+
+    <section class="form-section">
+
+        <h2>📝 Thông tin cá</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Tên cá</label>
+
+                <input
+                    type="text"
+                    id="fishName"
+                    placeholder="Ví dụ: Red Devil"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label>Tên khoa học</label>
+
+                <input
+                    type="text"
+                    id="scientificName"
+                    placeholder="Ví dụ: Amphilophus labiatus"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label>Nguồn gốc</label>
+
+                <input
+                    type="text"
+                    id="origin"
+                    placeholder="Ví dụ: Nicaragua, Costa Rica"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label>Kích thước trưởng thành</label>
+
+                <input
+                    type="text"
+                    id="fishSize"
+                    placeholder="Ví dụ: 30–35 cm"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label>Nhiệt độ</label>
+
+                <input
+                    type="text"
+                    id="temperature"
+                    placeholder="Ví dụ: 24–28°C"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label>pH</label>
+
+                <input
+                    type="text"
+                    id="ph"
+                    placeholder="Ví dụ: 6.5–8.0"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- ẢNH CHÍNH -->
+
+        <div class="form-group">
+
+            <label>Ảnh cá</label>
+
+            <input
+                type="file"
+                id="mainImage"
+                accept="image/*"
+            >
+
+        </div>
+
+
+        <!-- VẺ ĐẸP -->
+
+        <div class="form-group">
+
+            <label>✨ Đặc điểm / vẻ đẹp</label>
+
+            <textarea
+                id="beauty"
+                rows="4"
+                placeholder="Mô tả màu sắc, hình dáng, điểm nổi bật..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- CHĂM SÓC -->
+
+        <div class="form-group">
+
+            <label>🪴 Cách chăm sóc</label>
+
+            <textarea
+                id="care"
+                rows="4"
+                placeholder="Mô tả cách chăm sóc..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- DỊ HÌNH GIỚI TÍNH -->
+        <!-- ========================= -->
+
+        <div class="form-group">
+
+            <label>♂️♀️ Dị hình giới tính</label>
+
+            <select id="genderType">
+
+                <option value="none">
+                    Không có dị hình giới tính rõ rệt
+                </option>
+
+                <option value="has">
+                    Có dị hình giới tính
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- KHU VỰC ĐỰC CÁI -->
+
+        <div id="genderFields"
+             class="gender-fields hidden">
+
+            <h3>♂️ Cá đực</h3>
+
+            <div class="form-group">
+
+                <label>Ảnh cá đực</label>
+
+                <input
+                    type="file"
+                    id="maleImage"
+                    accept="image/*"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Đặc điểm cá đực</label>
+
+                <textarea
+                    id="maleDescription"
+                    rows="3"
+                    placeholder="Đặc điểm cá đực..."
+                ></textarea>
+
+            </div>
+
+
+            <h3>♀️ Cá cái</h3>
+
+            <div class="form-group">
+
+                <label>Ảnh cá cái</label>
+
+                <input
+                    type="file"
+                    id="femaleImage"
+                    accept="image/*"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Đặc điểm cá cái</label>
+
+                <textarea
+                    id="femaleDescription"
+                    rows="3"
+                    placeholder="Đặc điểm cá cái..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- SINH SẢN -->
+        <!-- ========================= -->
+
+        <div class="form-group">
+
+            <label>⭐ Độ khó sinh sản</label>
+
+            <select id="breedingDifficulty">
+
+                <option value="1">⭐ — Rất dễ</option>
+
+                <option value="2">⭐⭐ — Dễ</option>
+
+                <option value="3">⭐⭐⭐ — Trung bình</option>
+
+                <option value="4">⭐⭐⭐⭐ — Khó</option>
+
+                <option value="5">⭐⭐⭐⭐⭐ — Rất khó</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- GIÁ -->
+        <!-- ========================= -->
+
+        <div class="form-group">
+
+            <label>💰 Mức giá</label>
+
+            <select id="priceRating">
+
+                <option value="1">
+                    ⭐ — Rất rẻ
+                </option>
+
+                <option value="2">
+                    ⭐⭐ — Rẻ
+                </option>
+
+                <option value="3">
+                    ⭐⭐⭐ — Trung bình
+                </option>
+
+                <option value="4">
+                    ⭐⭐⭐⭐ — Đắt
+                </option>
+
+                <option value="5">
+                    ⭐⭐⭐⭐⭐ — Rất đắt
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- SIZE CÁ ĐANG CÓ TẠI CỬA HÀNG -->
+        <!-- ================================================= -->
+
+        <div class="available-size-section">
+
+            <h3>🏪 Cá đang có tại cửa hàng</h3>
+
+            <p class="section-description">
+                Nhập các size hiện đang có. Không cần nhập giá.
+            </p>
+
+
+            <div id="availableSizes">
+
+                <div class="size-input-row">
+
+                    <input
+                        type="text"
+                        class="available-size"
+                        placeholder="Ví dụ: 5–7 cm"
+                    >
+
+                    <button
+                        type="button"
+                        class="remove-size"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="addSize"
+                class="secondary-button"
+            >
+                + Thêm size
+            </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- BUTTON -->
+        <!-- ========================= -->
+
+        <div class="form-buttons">
+
+            <button
+                id="createPoster"
+                class="primary-button"
+            >
+                🎨 Tạo poster
+            </button>
+
+
+            <button
+                id="saveCard"
+                class="save-button"
+            >
+                💾 Lưu poster
+            </button>
+
+
+            <button
+                id="newCard"
+                class="new-button"
+            >
+                🆕 Tạo mới
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- POSTER -->
+    <!-- ========================= -->
+
+    <section class="poster-section">
+
+        <h2>👀 Xem trước poster</h2>
+
+
+        <div
+            id="poster"
+            class="poster"
+        >
+
+            <!-- HEADER POSTER -->
+
+            <div class="poster-header">
+
+                <div>
+
+                    <h1 id="posterFishName">
+                        Tên cá
+                    </h1>
+
+                    <p id="posterScientificName">
+                        Tên khoa học
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ẢNH -->
+
+            <div class="main-image-wrapper">
+
+                <img
+                    id="posterFishImage"
+                    class="main-fish-image"
+                    src=""
+                    alt="Cá"
+                >
+
+            </div>
+
+
+            <!-- THÔNG SỐ -->
+
+            <div class="poster-info-grid">
+
+                <div class="info-box">
+
+                    <span>🌎 Nguồn gốc</span>
+
+                    <strong id="posterOrigin">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>📏 Kích thước</span>
+
+                    <strong id="posterSize">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>🌡️ Nhiệt độ</span>
+
+                    <strong id="posterTemperature">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>💧 pH</span>
+
+                    <strong id="posterPh">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- VẺ ĐẸP -->
+
+            <div class="poster-block">
+
+                <h2>✨ Đặc điểm</h2>
+
+                <p id="posterBeauty">
+                    -
+                </p>
+
+            </div>
+
+
+            <!-- CHĂM SÓC -->
+
+            <div class="poster-block">
+
+                <h2>🪴 Chăm sóc</h2>
+
+                <p id="posterCare">
+                    -
+                </p>
+
+            </div>
+
+
+            <!-- GIỚI TÍNH -->
+
+            <div
+                id="genderPoster"
+                class="gender-poster"
+            >
+
+            </div>
+
+
+            <!-- ĐÁNH GIÁ -->
+
+            <div class="rating-grid">
+
+                <div class="rating-box">
+
+                    <h3>⭐ Sinh sản</h3>
+
+                    <div id="posterStars">
+                        ⭐
+                    </div>
+
+                    <p id="posterDifficultyText">
+                        Rất dễ
+                    </p>
+
+                </div>
+
+
+                <div class="rating-box">
+
+                    <h3>💰 Mức giá</h3>
+
+                    <div id="posterPriceStars">
+                        ⭐
+                    </div>
+
+                    <p id="posterPriceText">
+                        Rất rẻ
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- SIZE ĐANG CÓ TẠI CỬA HÀNG -->
+            <!-- ================================================= -->
+
+            <div
+                id="posterAvailableSizes"
+                class="available-sizes-poster"
+            >
+
+                <h2>
+                    🏪 Cá đang có tại cửa hàng
+                </h2>
+
+
+                <div
+                    id="posterSizeList"
+                    class="poster-size-list"
+                >
+
+                    <span class="size-badge">
+                        Chưa nhập size
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="poster-footer">
+
+                Cichlid Poster Maker
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="downloadPoster"
+            class="download-button"
+        >
+            📥 Tải poster PNG
+        </button>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- POSTER ĐÃ LƯU -->
+    <!-- ========================= -->
+
+    <section class="saved-section">
+
+        <h2>📚 Poster đã lưu</h2>
+
+
+        <input
+            type="text"
+            id="searchSavedCards"
+            class="search-input"
+            placeholder="🔎 Tìm tên cá..."
+        >
+
+
+        <div
+            id="savedCards"
+            class="saved-cards"
+        >
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- HTML2CANVAS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js">
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
